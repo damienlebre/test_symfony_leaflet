@@ -15,7 +15,7 @@ class ZipType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Zip',  IntegerType::class, [
+            ->add('zip',  IntegerType::class, [
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Entrez un code postal a rechercher'
@@ -29,10 +29,7 @@ class ZipType extends AbstractType
                     ])
                 ]
             ])
-            ->add('Filtrer', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-secondary m-3']
-            ])
-            ;
+            ->add('Filtrer', SubmitType::class, [ ]);
         ;
     }
 

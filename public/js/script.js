@@ -1,16 +1,13 @@
-const lattitude = 48.856614;
-const longitude = 2.3522219;
+const lattitude = document.querySelector('#lat').innerText;
+const longitude = document.querySelector('#lon').innerText;
 var map = L.map('map').setView([lattitude, longitude], 13);
-
+console.log(lattitude);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
    
 }).addTo(map);
-// L.Control.geocoder().addTo(map);
 
-// var marker = L.marker([lattitude, longitude]).addTo(map);
-
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+L.marker(lattitude, longitude).addTo(map);
 
 
 
@@ -24,7 +21,8 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
-    
+ 
+
 
     
 
